@@ -8,8 +8,7 @@ const Dashboard = (props) => {
                     product={product}/>
     })
     return(
-        <div>
-            {/* <div>Dashboard</div> */}
+        <div className="dashboard">
             {mappedInventory}
         </div>
     )
