@@ -4,7 +4,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Form from './Components/Form/Form';
 import Header from './Components/Header/Header';
 import './App.css';
-import './reset.css';
+// import './reset.css';
 
 class App extends React.Component {
   constructor(){
@@ -31,10 +31,13 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <Header />
-        <Dashboard inventory={this.state.inventory}/>
-        <Form/>
-        
+        <div className="page">
+          <Header />
+          <div className="under-header-dashboard">
+            <Dashboard inventory={this.state.inventory}/>
+            <Form/>
+          </div>
+        </div>
       </div>
     );
 

@@ -30,8 +30,10 @@ export default class Dashboard extends React.Component {
         const {name, price, imgurl} = this.state;
         const {addProduct} = this.props;
         return(
-            <div>
-                Form
+            <div className="form-container">
+                <div className="no-image-container">
+                    <img className="no-image" src="https://www.pngkey.com/png/full/110-1108086_no-png-icon-broken-camera-icon-png.png"/>
+                </div>
                 <form
                     onSubmit={e => {
                         addProduct(e, name, price, imgurl)
@@ -42,24 +44,28 @@ export default class Dashboard extends React.Component {
                             imgurl: ""
                         })
                     }}>
+                    <p>Image URL:</p>    
                     <input 
                         name="name" 
                         type="text"
                         value={name}  
                         onChange={(e) => this.handleChange(e)}/>    
+                    <p>Product Name:</p>    
                     <input 
                         name="price" 
                         type="text"
                         value={price}  
                         onChange={(e) => this.handleChange(e)}/>    
+                    <p>Price:</p>    
                     <input 
                         name="imgurl" 
                         type="text"
                         value={imgurl}  
                         onChange={(e) => this.handleChange(e)}/>    
-                    <button onClick={() => this.cancelInput()}>Cancel</button>
-                    <button>Add to Inventory</button>
-
+                    <div className="red-btn-container">
+                        <button className="red-btn" onClick={() => this.cancelInput()}>Cancel</button>
+                        <button className="red-btn">Add to Inventory</button>
+                    </div>
                 </form>  
             </div>
         )

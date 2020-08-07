@@ -1,11 +1,11 @@
 import React from 'react';
 
- const Header = () => {
+ function Header(){
     return(
         <div>
-            <header>
-                <img src='./shelfie_icon.png'/>
-                <h1 className="header">Header</h1>
+            <header className="header">
+                <img className="header-logo" src="https://raw.githubusercontent.com/DevMountain/simulation-1/master/assets/shelfie_icon.png"/>
+                <p className="header-text">SHELFIE</p>
 
             </header>
         </div>
