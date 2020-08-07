@@ -6,7 +6,8 @@ export default class Dashboard extends React.Component {
         this.state = {
             name: "",
             price: 0.0,
-            imgurl: ""
+            imgurl: "",
+            // imageIsNull: true
         }
         this.handleChange=this.handleChange.bind(this)
         this.cancelInput=this.cancelInput.bind(this)
@@ -71,3 +72,6 @@ export default class Dashboard extends React.Component {
         )
     }
 }
+
+
+//Need to add default image to product when no url is there. I found this solution on stackoverflow and am working on it but ran out of time: https://stackoverflow.com/questions/49037743/trying-to-add-a-default-image-if-image-null-reactjs

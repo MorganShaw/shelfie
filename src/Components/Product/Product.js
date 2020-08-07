@@ -6,7 +6,7 @@ const Product = (props) => {
         <div className="product-box">
             <div className="product-img">
                 <img className="product-img" 
-                src={imgurl}/>
+                src={imgurl} alt="https://s3.amazonaws.com/bloc-global-assets/almanac-assets/bootcamps/logos/000/002/656/original/DevMountain.jpg?1467187319"/>
             </div>
             <div className="product-info">
                 <h3 className="name">{name}</h3>

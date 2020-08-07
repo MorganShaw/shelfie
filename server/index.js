@@ -14,9 +14,12 @@ massive({
         rejectUnauthorized: false
     }
 }).then(db => {
-    app.set("db", db)
-    console.log("Database is connected")
+    app.set('db', db)
+    console.log('Database is connected')
 })
+
+app.get('/api/inventory', ctrl.getInventory);
+app.post('/api/products', ctrl.createProduct);
 
 
 
