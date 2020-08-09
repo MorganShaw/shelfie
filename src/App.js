@@ -40,7 +40,7 @@ class App extends React.Component {
           <Header />
           <div className="under-header-dashboard">
             <Dashboard inventory={this.state.inventory} getInventory={this.getInventory}/>
-            <Form getInventory={this.getInventory} selectedProduct={this.state.selectedProduct/>
+            <Form getInventory={this.getInventory} selectedProduct={this.state.selectedProduct}/>
           </div>
         </div>
       </div>
