@@ -59,6 +59,11 @@ header {
   box-sizing: border-box;
 }
 
+.image-preview {
+  height: 200px;
+  width: 350px;
+}
+
 .no-image-container {
   height: 200px;
   width: 350px;
@@ -124,7 +129,7 @@ form > p {
 }
 
 .dashboard {
-  height: 700px;
+  height: 1200px;
   width: 650px;
   display: flex;
   flex-direction: column;

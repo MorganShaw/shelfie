@@ -38,7 +38,7 @@ class App extends React.Component {
           <Header />
           <div className="under-header-dashboard">
             <Dashboard inventory={this.state.inventory} getInventory={this.getInventory}/>
-            <Form/>
+            <Form getInventory={this.getInventory}/>
           </div>
         </div>
       </div>
