@@ -6,8 +6,7 @@ export default class Dashboard extends React.Component {
         this.state = {
             name: "",
             price: 0.0,
-            imgurl: "",
-            // imageIsNull: true
+            img: "",
         }
         this.handleChange=this.handleChange.bind(this)
         this.cancelInput=this.cancelInput.bind(this)
@@ -23,45 +22,45 @@ export default class Dashboard extends React.Component {
         this.setState({
             name: "",
             price: 0.0,
-            imgurl: ""
+            img: ""
         })
     }
 
     render(){
-        const {name, price, imgurl} = this.state;
+        const {name, price, img} = this.state;
         const {addProduct} = this.props;
         return(
             <div className="form-container">
                 <div className="no-image-container">
-                    <img className="no-image" src="https://www.pngkey.com/png/full/110-1108086_no-png-icon-broken-camera-icon-png.png"/>
+                    <img className="no-image" src="https://www.pngkey.com/png/full/110-1108086_no-png-icon-broken-camera-icon-png.png" alt="broken image link"/>
                 </div>
                 <form
                     onSubmit={e => {
-                        addProduct(e, name, price, imgurl)
+                        addProduct(e, name, price, img)
                         console.log(this.state.name)
                         this.setState({
                             name: "",
                             price: 0.0,
-                            imgurl: ""
+                            img: ""
                         })
                     }}>
-                    <p>Image URL:</p>    
+                    <p>Product Name:</p>    
                     <input 
                         name="name" 
                         type="text"
                         value={name}  
                         onChange={(e) => this.handleChange(e)}/>    
-                    <p>Product Name:</p>    
+                    <p>Price:</p>    
                     <input 
                         name="price" 
                         type="text"
                         value={price}  
                         onChange={(e) => this.handleChange(e)}/>    
-                    <p>Price:</p>    
+                    <p>Image URL:</p>    
                     <input 
-                        name="imgurl" 
+                        name="img" 
                         type="text"
-                        value={imgurl}  
+                        value={img}  
                         onChange={(e) => this.handleChange(e)}/>    
                     <div className="red-btn-container">
                         <button className="red-btn" onClick={() => this.cancelInput()}>Cancel</button>
@@ -75,3 +74,6 @@ export default class Dashboard extends React.Component {
 
 
 //Need to add default image to product when no url is there. I found this solution on stackoverflow and am working on it but ran out of time: https://stackoverflow.com/questions/49037743/trying-to-add-a-default-image-if-image-null-reactjs
+//Update: I added default image using ternary in product page. It worked for a minute, and displayed product info from the database I'd created, but then I made further adjustments to other things, and now the products are no longer displaying. I don't know why.
+
+//Also - the styling isn't great. I need to fix margins and spacing, but didn't have time.
