@@ -12,11 +12,16 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      inventory: []
+      inventory: [],
+      selectedProduct: {}
     }
     this.getInventory = this.getInventory.bind(this)
   }
   
+  componentDidMount(){
+    this.getInventory()
+  }
+
   getInventory = () => {
     axios.get('/api/inventory').then(res => {
       this.setState({
@@ -27,9 +32,6 @@ class App extends React.Component {
     })
   }
   
-  componentDidMount(){
-    this.getInventory()
-  }
 
   render(){
     return (
@@ -38,7 +40,7 @@ class App extends React.Component {
           <Header />
           <div className="under-header-dashboard">
             <Dashboard inventory={this.state.inventory} getInventory={this.getInventory}/>
-            <Form getInventory={this.getInventory}/>
+            <Form getInventory={this.getInventory} selectedProduct={this.state.selectedProduct/>
           </div>
         </div>
       </div>

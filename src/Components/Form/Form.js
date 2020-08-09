@@ -86,12 +86,6 @@ export default class Dashboard extends React.Component {
 
 //Need to add default image to product when no url is there. I found this solution on stackoverflow and am working on it but ran out of time: https://stackoverflow.com/questions/49037743/trying-to-add-a-default-image-if-image-null-reactjs
 //Update: I added default image using ternary in product page. It worked for a minute, and displayed product info from the database I'd created, but then I made further adjustments to other things, and now the products are no longer displaying. I don't know why.
+//Update: it's working.
 
 //Also - the styling isn't great. I need to fix margins and spacing, but didn't have time.
-
-{/* <form
-onSubmit={e => {
-    addProduct(e, name, price, img)
-    console.log(this.state.name)
-    
-}}> */}

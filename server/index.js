@@ -20,6 +20,8 @@ massive({
 
 app.get('/api/inventory', ctrl.getInventory);
 app.post('/api/products', ctrl.createProduct);
+app.delete('/api/products/:id', ctrl.deleteProduct);
+
 
 
 
