@@ -4,44 +4,43 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Form from './Components/Form/Form';
 import Header from './Components/Header/Header';
 import './App.css';
+import routes from './routes';
+// import Product from './Components/Product/Product';
 // import { getInventory } from '../server/controller';
 
 // import './reset.css';
 
 class App extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      inventory: [],
-      selectedProduct: {}
-    }
-    this.getInventory = this.getInventory.bind(this)
-  }
+  // constructor(){
+  //   super();
+  //   this.state = {
+  //     inventory: [],
+  //     selectedProduct: {}
+  //   }
+  //   this.getInventory = this.getInventory.bind(this)
+  //   this.selectProduct = this.selectProduct.bind(this)
+  // }
   
-  componentDidMount(){
-    this.getInventory()
-  }
 
-  getInventory = () => {
-    axios.get('/api/inventory').then(res => {
-      this.setState({
-        inventory: res.data
-      })
-    }).catch(err => {
-      console.log(err)
-    })
-  }
   
+  // selectProduct = (id) => {
+  //   this.setState({
+  //     selectedProduct: id
+  //   })
+  // }
+
+
 
   render(){
     return (
       <div className="App">
         <div className="page">
           <Header />
-          <div className="under-header-dashboard">
+          {routes}
+          {/* <div className="under-header-dashboard">
             <Dashboard inventory={this.state.inventory} getInventory={this.getInventory}/>
-            <Form getInventory={this.getInventory} selectedProduct={this.state.selectedProduct}/>
-          </div>
+            <Form inventory={this.state.inventory} getInventory={this.getInventory} selectedProduct={this.state.selectedProduct}/>
+          </div> */}
         </div>
       </div>
     );
